@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupper Shop Detail | Confirmación de Compra</title>
+    <link rel="stylesheet" href="recursos/css/confirmacion.css">
+    <script type="module" src="./recursos/js/confirmacion.js"></script>
+</head>
+
+<body>
+    <header class="cabecera-principal">
+        <a href="./index.html">
+            <img src="./recursos/imagenes/logo.png" alt="Logo Cupper Shop Detail" width="150">
+        </a>
+
+        <nav aria-label="Menú principal">
+            <a href="./index.html">Inicio</a>
+            <a href="./catalogo.html">Catálogo</a>
+            <a href="./contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="contenido_principal">
+        <h1>Confirmación de Compra</h1>
+
+        <section id="sin-pedido" class="aviso-vacio" hidden>
+            <h2>No encontramos un pedido reciente</h2>
+            <p>Agregá productos al carrito y completá el proceso de pago para generar tu ticket.</p>
+            <a href="./catalogo.html" class="btn-primario">Ir al catálogo</a>
+        </section>
+
+        <section id="ticket-seccion" class="ticket-contenedor" hidden>
+            <article id="ticket-card" class="ticket-card">
+                <div class="ticket-cabecera">
+                    <span class="badge-aprobado">Pago aprobado</span>
+                    <h2>Ticket Digital</h2>
+                    <p class="ticket-orden">Orden: <strong id="ticket-orden"></strong></p>
+                    <p class="ticket-fecha" id="ticket-fecha"></p>
+                </div>
+
+                <div class="ticket-datos">
+                    <div class="ticket-bloque">
+                        <h3>Cliente</h3>
+                        <p id="ticket-cliente-nombre"></p>
+                        <p id="ticket-cliente-email"></p>
+                        <p id="ticket-cliente-telefono"></p>
+                    </div>
+
+                    <div class="ticket-bloque">
+                        <h3>Entrega y Pago</h3>
+                        <p id="ticket-entrega-metodo"></p>
+                        <p id="ticket-entrega-direccion"></p>
+                        <p id="ticket-pago-tarjeta"></p>
+                    </div>
+                </div>
+
+                <div class="ticket-detalle">
+                    <h3>Detalle de productos</h3>
+                    <div id="ticket-items" class="ticket-items"></div>
+                </div>
+
+                <div class="ticket-totales">
+                    <div class="ticket-linea">
+                        <span>Subtotal</span>
+                        <span id="ticket-subtotal">$0</span>
+                    </div>
+                    <div class="ticket-linea">
+                        <span>Envío</span>
+                        <span id="ticket-envio">Gratis</span>
+                    </div>
+                    <div class="ticket-linea ticket-linea--total">
+                        <strong>Total abonado</strong>
+                        <strong id="ticket-total">$0</strong>
+                    </div>
+                </div>
+            </article>
+
+            <div class="ticket-acciones">
+                <button type="button" id="btn-copiar-ticket" class="btn-primario">Copiar ticket</button>
+                <a id="btn-enviar-whatsapp" class="btn-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Enviar pedido por WhatsApp</a>
+                <a href="./catalogo.html" class="btn-secundario">Seguir comprando</a>
+            </div>
+
+            <p id="notificacion-accion" class="notificacion-accion" role="status" hidden></p>
+        </section>
+    </main>
+
+    <footer class="pie-principal">
+        <ul>
+            <li>
+                <a class="contacto-whatsapp" href="https://wa.me?tel=1111111" aria-label="ir a whatsapp">Escribinos por WhatsApp</a>
+            </li>
+            <li>
+                Córdoba, Argentina
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>
+

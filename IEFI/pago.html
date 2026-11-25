@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupper Shop Detail | Finalizar Compra</title>
+    <link rel="stylesheet" href="recursos/css/pago.css">
+    <script type="module" src="./recursos/js/pago.js"></script>
+</head>
+
+<body>
+    <header class="cabecera-principal">
+        <a href="./index.html">
+            <img src="./recursos/imagenes/logo.png" alt="Logo Cupper Shop Detail" width="150">
+        </a>
+
+        <nav aria-label="Menú principal">
+            <a href="./index.html">Inicio</a>
+            <a href="./catalogo.html">Catálogo</a>
+            <a href="./contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="contenido_principal">
+        <h1>Finalizar Compra</h1>
+
+        <section id="mensaje-carrito-vacio" class="aviso-vacio" hidden>
+            <h2>Tu carrito está vacío</h2>
+            <p>Agregá productos desde el catálogo antes de continuar con el pago.</p>
+            <a href="./catalogo.html" class="btn-primario">Volver al catálogo</a>
+        </section>
+
+        <div id="contenedor-checkout" class="checkout-layout">
+            <section class="checkout-formulario">
+                <form id="form-pago" novalidate>
+                    <fieldset class="bloque-form">
+                        <legend>1. Método de entrega</legend>
+
+                        <div class="opciones-entrega">
+                            <label class="opcion-entrega">
+                                <input type="radio" name="metodoEntrega" value="retiro" checked>
+                                <div>
+                                    <strong>Retiro en el local</strong>
+                                    <span>Quilmes 3180, Córdoba · Gratis</span>
+                                </div>
+                            </label>
+
+                            <label class="opcion-entrega">
+                                <input type="radio" name="metodoEntrega" value="envio">
+                                <div>
+                                    <strong>Envío a domicilio</strong>
+                                    <span>$3.500 (Gratis superando $20.000)</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div id="campos-envio" class="campos-envio" hidden>
+                            <div class="campo-grupo">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" id="direccion" name="direccion" placeholder="Ej: Av. Colón 1250">
+                                <small class="mensaje-error" id="error-direccion"></small>
+                            </div>
+
+                            <div class="campos-fila">
+                                <div class="campo-grupo">
+                                    <label for="localidad">Localidad</label>
+                                    <input type="text" id="localidad" name="localidad" placeholder="Ej: Córdoba">
+                                    <small class="mensaje-error" id="error-localidad"></small>
+                                </div>
+
+                                <div class="campo-grupo">
+                                    <label for="codigo-postal">Código postal</label>
+                                    <input type="text" id="codigo-postal" name="codigoPostal" inputmode="numeric" maxlength="4" placeholder="Ej: 5000">
+                                    <small class="mensaje-error" id="error-codigo-postal"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="bloque-form">
+                        <legend>2. Datos del comprador</legend>
+
+                        <div class="campo-grupo">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required minlength="3" placeholder="Ej: Juan Pérez">
+                            <small class="mensaje-error" id="error-nombre"></small>
+                        </div>
+
+                        <div class="campos-fila">
+                            <div class="campo-grupo">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" required placeholder="Ej: juan@email.com">
+                                <small class="mensaje-error" id="error-email"></small>
+                            </div>
+
+                            <div class="campo-grupo">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" required minlength="8" maxlength="15" placeholder="Ej: 3511234567">
+                                <small class="mensaje-error" id="error-telefono"></small>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="bloque-form">
+                        <legend>3. Datos de tarjeta</legend>
+                        <div class="campo-grupo">
+                            <label for="numero-tarjeta">Número de tarjeta</label>
+                            <input type="text" id="numero-tarjeta" name="numeroTarjeta" inputmode="numeric" maxlength="19" required placeholder="4509 1234 5678 9010">
+                            <small class="mensaje-error" id="error-numero-tarjeta"></small>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="titular-tarjeta">Nombre en la tarjeta</label>
+                            <input type="text" id="titular-tarjeta" name="titularTarjeta" required minlength="3" placeholder="Como figura en la tarjeta">
+                            <small class="mensaje-error" id="error-titular-tarjeta"></small>
+                        </div>
+
+                        <div class="campos-fila">
+                            <div class="campo-grupo">
+                                <label for="vencimiento-tarjeta">Vencimiento (MM/AA)</label>
+                                <input type="text" id="vencimiento-tarjeta" name="vencimientoTarjeta" inputmode="numeric" maxlength="5" required placeholder="12/28">
+                                <small class="mensaje-error" id="error-vencimiento-tarjeta"></small>
+                            </div>
+
+                            <div class="campo-grupo">
+                                <label for="cvv-tarjeta">Código de seguridad (CVV)</label>
+                                <input type="password" id="cvv-tarjeta" name="cvvTarjeta" inputmode="numeric" maxlength="4" required placeholder="123">
+                                <small class="mensaje-error" id="error-cvv-tarjeta"></small>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="checkout-acciones">
+                        <a href="./catalogo.html" class="btn-secundario">Volver al catálogo</a>
+                        <button type="submit" id="btn-confirmar-pago" class="btn-primario">Ir a Pasarela de Pago</button>
+                    </div>
+                </form>
+            </section>
+
+            <aside class="resumen-pedido">
+                <h2>Resumen del pedido</h2>
+                <div id="resumen-items" class="resumen-items"></div>
+
+                <div class="resumen-totales">
+                    <div class="resumen-linea">
+                        <span>Subtotal</span>
+                        <span id="resumen-subtotal">$0</span>
+                    </div>
+                    <div class="resumen-linea">
+                        <span>Envío</span>
+                        <span id="resumen-envio">Gratis</span>
+                    </div>
+                    <div class="resumen-linea resumen-linea--total">
+                        <strong>Total</strong>
+                        <strong id="resumen-total">$0</strong>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <dialog id="modal-pasarela" class="modal-pasarela">
+            <div class="modal-pasarela__contenido">
+                <h2 id="pasarela-titulo">Conectando con Pasarela de Pago...</h2>
+                <p id="pasarela-mensaje">Estamos procesando tu pago simulado de forma segura.</p>
+                <div id="pasarela-acciones" class="modal-pasarela__acciones" hidden>
+                    <a href="./confirmacion.html" class="btn-primario">Ver ticket digital</a>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+    <footer class="pie-principal">
+        <ul>
+            <li>
+                <a class="contacto-whatsapp" href="https://wa.me?tel=1111111" aria-label="ir a whatsapp">Escribinos por WhatsApp</a>
+            </li>
+            <li>
+                Córdoba, Argentina
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>
+

@@ -19,16 +19,62 @@
             <a href="./index.html">Inicio</a>
             <a href="./catalogo.html">Catálogo</a>
             <a href="./contacto.html">Contacto</a>
+            <button type="button" id="btn-abrir-carrito" class="btn-carrito">
+                Carrito (<span id="contador-carrito">0</span>)
+            </button>
         </nav>
     </header>
 
     <main class="contenido_principal">
         <h1>Catálogo</h1>
 
+        <section class="seccion-filtros" aria-label="Filtros de productos">
+            <h2>Filtrar productos</h2>
+            <div class="filtros-grid">
+                <div class="filtro-campo">
+                    <label for="filtro-texto">Buscar</label>
+                    <input type="text" id="filtro-texto" placeholder="Ej: Cherry, Shampoo...">
+                </div>
+
+                <div class="filtro-campo">
+                    <label for="filtro-categoria">Categoría</label>
+                    <select id="filtro-categoria">
+                        <option value="todas">Todas las categorías</option>
+                    </select>
+                </div>
+
+                <div class="filtro-campo">
+                    <label for="filtro-precio">Precio máximo ($)</label>
+                    <input type="number" id="filtro-precio" min="0" step="500" placeholder="Ej: 12000">
+                </div>
+
+                <button type="button" id="btn-limpiar-filtros" class="btn-limpiar">Limpiar</button>
+            </div>
+        </section>
+
         <section>
             <h2>Productos</h2>
          <div id="contenedor-productos"></div>
         </section>
+
+        <dialog id="modal-carrito" class="modal-carrito">
+            <div class="modal-carrito__contenido">
+                <div class="modal-carrito__cabecera">
+                    <h2>Tu Carrito</h2>
+                    <button type="button" id="btn-cerrar-carrito" class="btn-cerrar" aria-label="Cerrar carrito">✕</button>
+                </div>
+
+                <div id="lista-carrito" class="modal-carrito__lista"></div>
+
+                <div class="modal-carrito__pie">
+                    <p class="modal-carrito__total">Total: <strong id="total-carrito">$0</strong></p>
+                    <div class="modal-carrito__acciones">
+                        <button type="button" id="btn-vaciar-carrito" class="btn-limpiar">Vaciar carrito</button>
+                        <a href="./pago.html" id="btn-ir-pago" class="btn-pagar">Ir a pagar</a>
+                    </div>
+                </div>
+            </div>
+        </dialog>
     </main>
 
     <footer>

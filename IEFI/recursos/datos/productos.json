@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "nombre": "Toxic Shine - Cherry Quick Detailer",
+    "categoria": "Ceras y selladores",
+    "imagen": "./recursos/imagenes/cherry-detailer.jpg",
+    "descripcion": "Cera rápida y abrillantador instantáneo con aroma a cereza para acabado final.",
+    "precio": 12500,
+    "presentacion": "600ml",
+    "link": "./producto_cherry_toxic.html"
+  },
+  {
+    "id": 2,
+    "nombre": "Toxic Shine - Toxic Atomic Shampoo",
+    "categoria": "Exteriores",
+    "imagen": "./recursos/imagenes/toxic-atomic.jpg",
+    "descripcion": "Shampoo neutro de alta espuma, seguro para vehículos con sellados cerámicos.",
+    "precio": 9800,
+    "presentacion": "600ml",
+    "link": ""
+  },
+  {
+    "id": 3,
+    "nombre": "Toxic Shine - Back to Black Acondicionador",
+    "categoria": "Exteriores",
+    "imagen": "./recursos/imagenes/back-to-black.jpg",
+    "descripcion": "Acondicionador para cubiertas y plásticos exteriores con efecto brillo mojado.",
+    "precio": 11000,
+    "presentacion": "600ml",
+    "link": ""
+  },
+  {
+    "id": 4,
+    "nombre": "Toxic Shine - Iron Warning Toxic Descontaminante",
+    "categoria": "Exteriores",
+    "imagen": "./recursos/imagenes/iron-toxic.jpg",
+    "descripcion": "Removedor de partículas férricas para llantas y pintura con indicador de color.",
+    "precio": 14200,
+    "presentacion": "500ml",
+    "link": ""
+  },
+  {
+    "id": 5,
+    "nombre": "Toxic Shine - Glass Cleaner Limpiavidrios",
+    "categoria": "Interiores",
+    "imagen": "./recursos/imagenes/glass-cleaner.jpg",
+    "descripcion": "Limpiador de cristales de evaporación rápida libre de marcas y vetas.",
+    "precio": 8500,
+    "presentacion": "600ml",
+    "link": ""
+  },
+  {
+    "id": 6,
+    "nombre": "Toxic Shine - Black Silk Cera Líquida",
+    "categoria": "Ceras y selladores",
+    "imagen": "./recursos/imagenes/black-silk.jpg",
+    "descripcion": "Cera en spray para colores oscuros que resalta la profundidad y disimula rayas finas.",
+    "precio": 13000,
+    "presentacion": "600ml",
+    "link": ""
+  }
+]
+
